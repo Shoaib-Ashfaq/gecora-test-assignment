@@ -1,1 +1,8 @@
 @import 'tailwindcss';
+
+.combined-bg {
+  background-image: url('./assets/lines.svg'), url('./assets/red-line.png');
+  background-repeat: no-repeat, no-repeat;
+  background-position: -120px 120px, -10px 320px;
+  background-size: 800px 950px, 400px 500px;
+}
