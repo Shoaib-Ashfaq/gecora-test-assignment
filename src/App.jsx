@@ -1,11 +1,13 @@
 import React from 'react';
 import Test4 from './pages/Test4';
+import Test2 from './pages/Test2';
 
 const App = () => {
   return (
-    <div className="text-2xl bg-black min-h-screen">
-      <Test4 />
-    </div>
+    <>
+      <Test2 />
+      {/* <Test4 /> */}
+    </>
   );
 };
 

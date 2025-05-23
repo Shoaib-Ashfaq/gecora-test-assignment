@@ -1,14 +1,14 @@
 import React from 'react';
 import OfferBar from '../components/OfferBar';
-import Navbar from '../components/Navbar';
 import Card from '../components/Card';
+import MobileNavbar from '../components/MobileNavbar';
 
 const Test4 = () => {
   return (
     <div className="text-2xl bg-black min-h-screen ">
       <div className="combined-bg max-w-[400px] mx-auto">
         <OfferBar />
-        <Navbar />
+        <MobileNavbar />
 
         <section className="text-white px-[24px] py-[40px] max-w-md mx-auto mt-[32px]">
           <h2 className="text-[32px] font-bold">

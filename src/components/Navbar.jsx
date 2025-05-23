@@ -1,73 +1,106 @@
-import React, { useState } from 'react';
-import cartLogo from '../assets/cart.png';
-import arrow from '../assets/arrow.png';
+import React from 'react';
+import tag from '../assets/tag.png';
+import logo from '../assets/logo.png';
+import apple from '../assets/apple.png';
+import user from '../assets/user.png';
+import like from '../assets/like.png';
+import bag from '../assets/bag.png';
+import band from '../assets/band.png';
+import setting from '../assets/setting.png';
+import search from '../assets/search.png';
 
 const Navbar = () => {
-  const [showSlideBar, setShowSlideBar] = useState(true);
-
   return (
     <>
-      {/* Navbar */}
-      <nav className="bg-black  text-white border-t-4 border-[#5D1EFF] relative z-50">
-        <div className="max-w-[327px] py-3 m-auto flex justify-between items-center">
-          <span className="font-semibold">geCommerce</span>
-          <div className="flex items-center gap-[20px]">
-            <img src={cartLogo} alt="Cart" />
-            <div
-              className="bg-[#E4F328] p-2 flex flex-col gap-[4px] cursor-pointer"
-              onClick={() => setShowSlideBar(true)}
-            >
-              <div className="w-4 ml-auto border border-black"></div>
-              <div className="w-5 ml-auto border border-black"></div>
-              <div className="w-4 ml-auto border border-black"></div>
+      <div className="bg-black text-[#808080] ">
+        <div className="max-w-[1920px] mx-auto cursor-pointer flex justify-between px-5 py-1">
+          <p>Pomoc & kontakt</p>
+          <div className="flex gap-5">
+            <p>Rastislavova 68, Košice</p>
+            <p>+421 919 215 491</p>
+          </div>
+        </div>
+      </div>
+      <div className=" max-w-[1920px] mx-auto flex justify-end cursor-pointer text-[#808080] px-5 py-1">
+        <div className="flex gap-3">
+          <p>Sledovanie zásielky</p>
+          <p>Vrátenie tovaru</p>
+          <p>O nás</p>
+          <p>FAQ</p>
+          <p>Blog</p>
+        </div>
+      </div>
+      <div className="bg-[#F54E80] py-1">
+        <p className="max-w-[1920px] mx-auto  text-center font-semibold text-white">
+          Nové iPhone 14 PRO s 20% zľavou ✨
+        </p>
+      </div>
+      <div className=" bg-black text-white">
+        <div className="max-w-[1920px] mx-auto p-4 flex justify-between items-center py-[24px]">
+          <div className="flex gap-5">
+            <div className="cursor-pointer flex gap-[3px] text-[16px]">
+              <img src={tag} alt="" />
+              <p>Výpredaj</p>
+            </div>
+            <div className="cursor-pointer flex gap-[3px] text-[16px]">
+              <img src={band} alt="" />
+              <p>Novinky</p>
+            </div>
+            <div className="cursor-pointer flex gap-[3px] text-[16px]">
+              <img src={setting} alt="" />
+              <p>MC Servis</p>
             </div>
           </div>
-        </div>
-        <hr className="h-[0.5px] max-w-[327px] m-auto bg-white border-none" />
-      </nav>
 
-      {/* Sidebar Overlay */}
-      <div
-        className={`fixed inset-0 bg-black bg-opacity-60 transition-opacity duration-300 z-40 ${
-          showSlideBar ? 'opacity-100 visible' : 'opacity-0 invisible'
-        }`}
-        onClick={() => setShowSlideBar(false)}
-      />
+          <div className="flex ml-[-220px] cursor-pointer">
+            <img className="w-[251px]" src={logo} alt="" />
+            <div className=" px-[10px] border-[2px] w-[100px] border-white rounded-[8px] flex justify-between gap-[10px] items-center">
+              <img className="w-[25px] h-[25px]" src={apple} alt="" />
+              <p className="text-[12px]">
+                Premium <br /> partner
+              </p>
+            </div>
+          </div>
 
-      {/* Sidebar Panel */}
-      <div
-        className={`fixed top-0 right-0 w-[90%] h-full bg-[#DEF241] shadow-lg text-black transform transition-transform duration-300 z-50 ${
-          showSlideBar ? 'translate-x-0' : 'translate-x-full'
-        }`}
-      >
-        <div className="flex justify-between mt-[90px] items-center px-[24px]">
-          <span className="font-semibold text-lg">geCommerce</span>
-          <div
-            onClick={() => setShowSlideBar(false)}
-            className="w-6 h-6 p-5 rounded-full bg-black border-2 -[#E4F328] flex items-center justify-center cursor-pointer"
-          >
-            <div className="w-6 h-0.5 bg-[#E4F328] rotate-45 absolute"></div>
-            <div className="w-6 h-0.5 bg-[#E4F328] -rotate-45 absolute"></div>
+          <div className="flex gap-[16px]">
+            <img className="cursor-pointer" src={user} alt="" />
+            <img className="cursor-pointer" src={like} alt="" />
+            <img className="cursor-pointer" src={bag} alt="" />
           </div>
         </div>
+      </div>
 
-        <ul className="px-[24px] pt-[50px] uppercase space-y-4 font-semibold">
-          <li className="mt-[30px] text-[#5D31FF] hover:text-[#5D31FF] cursor-pointer">DOMOV</li>
-          <li className="mt-[30px] hover:text-[#5D31FF] cursor-pointer">ecommerce</li>
-          <li className="mt-[30px] hover:text-[#5D31FF] cursor-pointer">commerce</li>
-          <li className="mt-[30px] hover:text-[#5D31FF] cursor-pointer">fakturácia</li>
-          <li className="mt-[30px] hover:text-[#5D31FF] cursor-pointer">riadenie firmy</li>
-          <li className="mt-[30px] hover:text-[#5D31FF] cursor-pointer">cenník</li>
-          <li className="mt-[30px] hover:text-[#5D31FF] cursor-pointer">kontakt</li>
-        </ul>
-
-        <div className="px-[24px] mt-[50px] flex gap-4 text-[14px]">
-          <button className="w-full border-2 border-black text-black py-2 rounded font-semibold uppercase hover:bg-black hover:text-[#DEF241] transition">
-            prihlásenie
-          </button>
-          <button className="w-full bg-black text-[#DEF241] py-2 rounded font-semibold uppercase hover:bg-[#5D31FF] transition">
-            registrácia
-          </button>
+      <div className="bg-black px-5 py-[16px]">
+        <div className="max-w-[1920px] mx-auto  flex justify-between">
+          <div className="flex gap-[50px]">
+            <div className="flex bg-white w-fit px-[24px] py-[7px] font-semibold items-center justify-center gap-[8px]">
+              <p className="text-black">Všetky kategórie</p>
+              <div
+                className="p-2 flex flex-col gap-[4px] cursor-pointer"
+                onClick={() => setShowSlideBar(true)}
+              >
+                <div className="w-4 ml-auto border border-black"></div>
+                <div className="w-5 ml-auto border border-black"></div>
+                <div className="w-4 ml-auto border border-black"></div>
+              </div>
+            </div>
+            <div className="flex text-white">
+              <p className=" cursor-pointer py-[10px] px-[24px]">iPhone</p>
+              <p className=" cursor-pointer py-[10px] px-[24px]">iPad</p>
+              <p className=" cursor-pointer py-[10px] px-[24px]">MacBook</p>
+              <p className=" cursor-pointer py-[10px] px-[24px]">Apple Airpods</p>
+              <p className=" cursor-pointer py-[10px] px-[24px]">Smarthome</p>
+              <p className=" cursor-pointer py-[10px] px-[24px]">Príslušenstvo</p>
+            </div>
+          </div>
+          <div className="flex items-center bg-white px-[16px] py-[12px] gap-[12px]">
+            <img src={search} alt="" />
+            <input
+              type="text"
+              placeholder="Zadajte názov produktu"
+              className="px-3 py-1 rounded-md text-black outline-none"
+            />
+          </div>
         </div>
       </div>
     </>
